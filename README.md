@@ -2,7 +2,7 @@
 
 Домашнее задание #3 в ШРИ Яндекса 2018.
 
-# Задание
+## Задание
 
 Слайды про графические эффекты: https://mrsamo.github.io/shri-2018-multimedia-graphics/<br>
 Слайды про аудио: https://mrsamo.github.io/shri-2018-multimedia-audio/<br>
