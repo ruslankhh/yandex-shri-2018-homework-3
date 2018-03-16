@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #root {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #Player {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+  </style>
 </head>
 <body>
-
+  <div id="root">
+    <video id="Player" autoplay muted></video>
+  </div>
 </body>
 </html>
