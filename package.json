@@ -1,0 +1,29 @@
+{
+  "name": "yandex-shri-2018-homework-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruslankhh/yandex-shri-2018-homework-3.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Ruslan Khusnetdinov",
+    "email": "ruslankhh@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruslankhh/yandex-shri-2018-homework-3/issues"
+  },
+  "homepage": "https://github.com/ruslankhh/yandex-shri-2018-homework-3#readme",
+  "devDependencies": {
+    "webpack": "^4.0.0-beta.3",
+    "webpack-cli": "^2.0.12"
+  }
+}
