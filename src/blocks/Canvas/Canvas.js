@@ -4,7 +4,7 @@ import './Canvas.css';
 const Canvas = document.createElement('canvas');
 const ctx = Canvas.getContext('2d');
 
-Canvas.className = 'Canvas';
+Canvas.className = 'Canvas Canvas--filter-terminator';
 Canvas.width = 640;
 Canvas.height = 480;
 
