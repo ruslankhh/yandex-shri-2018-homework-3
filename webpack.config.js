@@ -18,6 +18,27 @@ module.exports = {
             options: { minimize: true }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              importLoaders: 2
+            }
+          },
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       }
     ]
   },

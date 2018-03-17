@@ -1,10 +1,5 @@
-const Player = document.getElementById('Player');
+import App from './blocks/App/App';
 
-navigator.mediaDevices.getUserMedia({ audio: true, video: true })
-  .then(stream => {
-    try {
-      Player.srcObject = stream;
-    } catch (error) {
-      Player.src = URL.createObjectURL(stream);
-    }
-  });
+const root = document.getElementById('root');
+
+root.appendChild(App);
