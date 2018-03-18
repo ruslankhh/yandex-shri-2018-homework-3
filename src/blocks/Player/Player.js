@@ -56,8 +56,7 @@ const animate = () => {
       }, 100 + 400 * Math.random());
     } else {
       Player.filters = defaultFilters;
-
-      setTimeout(animate, 10000 + 10000 * Math.random());
+      animate();
     }
   };
 
