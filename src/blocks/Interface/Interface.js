@@ -1,46 +1,39 @@
-import fps from 'fps';
+import * as PIXI from 'pixi.js';
 import parser from 'ua-parser-js';
 
 import './Interface.css';
 
-const element = document.createElement('canvas');
-const ctx = element.getContext('2d');
+const Interface = new PIXI.Container();
+const ticker = PIXI.ticker.shared;
 
-element.className = 'Interface';
-element.width = 640;
-element.height = 480;
-
-const Interface = {
-  ctx,
-  ticker: fps({ every: 10 }),
-  updateData: function () {
-    const ua = parser(window.navigator.userAgent);
-
-    this.ua = ua;
-    this.os = `${ua.os.name} ${ua.os.version}`;
-    this.engine = `${ua.engine.name} ${ua.engine.version}`;
-    this.browser = `${ua.browser.name} ${ua.browser.version}`;
-
-    this.rate = this.ticker.rate.toFixed(3);
-  },
-  view: element
+const textOptions = {
+  fontFamily: 'Menlo, Monaco, monospace',
+  fontSize: 10,
+  fill: 0xffffff
 };
 
-setInterval(() => Interface.updateData(), 400);
+const textFPS = new PIXI.Text('', textOptions);
+textFPS.position.set(20);
+
+const textUA = new PIXI.Text('', textOptions);
+textUA.position.set(20, 425);
+
+Interface.addChild(
+  textFPS,
+  textUA
+);
 
 const animate = () => {
-  const { browser, ctx, engine, os, rate, view: { width, height } } = Interface;
+  const fps = ticker.FPS.toFixed(3).toString().toUpperCase();
+  const ua = parser(window.navigator.userAgent);
+  const os = `${ua.os.name} ${ua.os.version}`.toUpperCase();
+  const engine = `${ua.engine.name} ${ua.engine.version}`.toUpperCase();
+  const browser = `${ua.browser.name} ${ua.browser.version}`.toUpperCase();
 
-  ctx.clearRect(0, 0, width, height);
+  textFPS.text = `FPS: ${fps}`;
+  textUA.text = `OS: ${os}\nENGINE: ${engine}\nBROWSER: ${browser}`;
 
-  ctx.fillStyle = 'rgba(256, 256, 256, 1)';
-  ctx.font = '10px Menlo, Monaco, monospace';
-  ctx.fillText(`FPS: ${String(rate).toUpperCase()}`, 10, 30);
-  ctx.fillText(`OS: ${String(os).toUpperCase()}`, 10, 430);
-  ctx.fillText(`ENGINE: ${String(engine).toUpperCase()}`, 10, 445);
-  ctx.fillText(`BROWSER: ${String(browser).toUpperCase()}`, 10, 460);
-
-  window.requestAnimationFrame(animate);
+  setTimeout(animate, 100);
 };
 
 animate();

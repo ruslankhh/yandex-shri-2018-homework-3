@@ -61,10 +61,12 @@ const animate = () => {
     }
   };
 
-  iter(1 + 4 * Math.random());
+  setTimeout(() => {
+    iter(1 + 4 * Math.random());
+  }, 10000 + 10000 * Math.random());
 };
 
-setTimeout(animate, 10000 + 10000 * Math.random());
+animate();
 
 Player.addChild(videoSprite);
 

@@ -14,8 +14,9 @@ const { view } = App;
 
 view.className = 'App';
 
-App.stage.addChild(Player);
-
-App.ticker.add(() => Interface.ticker.tick());
+App.stage.addChild(
+  Player,
+  Interface
+);
 
 export default App;
