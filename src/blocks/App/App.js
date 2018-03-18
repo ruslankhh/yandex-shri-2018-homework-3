@@ -1,10 +1,21 @@
-import Canvas from '../Canvas/Canvas';
-import CanvasInterface from '../CanvasInterface/CanvasInterface';
+import * as PIXI from 'pixi.js';
 
-const App = document.createElement('div');
+import Player from '../Player/Player';
+import Interface from '../Interface/Interface';
 
-App.className = 'App';
-App.appendChild(Canvas);
-App.appendChild(CanvasInterface);
+import './App.css';
+
+const App = new PIXI.Application({
+  width: 640,
+  height: 480
+});
+
+const { view } = App;
+
+view.className = 'App';
+
+App.stage.addChild(Player);
+
+App.ticker.add(() => Interface.ticker.tick());
 
 export default App;

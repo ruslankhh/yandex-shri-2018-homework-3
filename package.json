@@ -1,6 +1,6 @@
 {
   "name": "yandex-shri-2018-homework-3",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -50,6 +50,10 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "fps": "0.0.3"
+    "@pixi/filter-adjustment": "^2.5.0",
+    "@pixi/filter-glitch": "^2.6.0",
+    "@pixi/filter-pixelate": "^2.5.0",
+    "fps": "0.0.3",
+    "pixi.js": "^4.7.1"
   }
 }
