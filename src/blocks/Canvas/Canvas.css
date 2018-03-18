@@ -9,6 +9,7 @@
     min-height: 100%;
   }
 
+  /* Не использую */
   &--filter-terminator {
     filter:
       grayscale(1)
