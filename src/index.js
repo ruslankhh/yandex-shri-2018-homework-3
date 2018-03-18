@@ -1,9 +1,9 @@
 import App from './blocks/App/App';
-import CanvasInterface from './blocks/CanvasInterface/CanvasInterface';
+import Interface from './blocks/Interface/Interface';
 
 const root = document.getElementById('root');
 
 root.appendChild(App.view);
-root.appendChild(CanvasInterface.view);
+root.appendChild(Interface.view);
 
 App.render();
