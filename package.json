@@ -45,7 +45,7 @@
     "to-string-loader": "^1.1.5",
     "ua-parser-js": "^0.7.17",
     "url-loader": "^1.0.1",
-    "webpack": "^4.0.0-beta.3",
+    "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
   },
@@ -54,6 +54,7 @@
     "@pixi/filter-glitch": "^2.6.0",
     "@pixi/filter-pixelate": "^2.5.0",
     "fps": "0.0.3",
-    "pixi.js": "^4.7.1"
+    "pixi.js": "^4.7.1",
+    "tracking": "^1.1.3"
   }
 }

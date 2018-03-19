@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 
-import Player from '../Player/Player';
-import Interface from '../Interface/Interface';
+import PlayerContainer from '../PlayerContainer/PlayerContainer';
+import InterfaceContainer from '../InterfaceContainer/InterfaceContainer';
 
 import './App.css';
 
@@ -15,8 +15,8 @@ const { view } = App;
 view.className = 'App';
 
 App.stage.addChild(
-  Player,
-  Interface
+  PlayerContainer,
+  InterfaceContainer
 );
 
 export default App;

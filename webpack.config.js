@@ -12,6 +12,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'html-loader',
@@ -21,6 +22,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           {
@@ -35,6 +37,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        exclude: /node_modules/,
         loader: 'url-loader',
         options: {
           limit: 10000
