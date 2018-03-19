@@ -1,17 +1,17 @@
-import * as PIXI from 'pixi.js';
+import { Container, filters, Sprite, Texture } from 'pixi.js';
 import { AdjustmentFilter } from '@pixi/filter-adjustment';
 import { PixelateFilter } from '@pixi/filter-pixelate';
 import { GlitchFilter } from '@pixi/filter-glitch';
 
 import Player from '../Player/Player';
 
-const PlayerContainer = new PIXI.Container();
+const PlayerContainer = new Container();
 
-const texture = PIXI.Texture.fromVideo(Player);
-const videoSprite = new PIXI.Sprite(texture);
+const texture = Texture.fromVideo(Player);
+const videoSprite = new Sprite(texture);
 
-const blurFilter = new PIXI.filters.BlurFilter(0.5, 1, 1, 5);
-const colorMatrixFilter = new PIXI.filters.ColorMatrixFilter();
+const blurFilter = new filters.BlurFilter(0.5, 1, 1, 5);
+const colorMatrixFilter = new filters.ColorMatrixFilter();
 colorMatrixFilter.greyscale(0.5, true);
 const adjustmentFilter = new AdjustmentFilter({
   contrast: 1.5,

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "gh-pages": "^1.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.6",
     "postcss-assets": "^5.0.0",
@@ -54,6 +56,7 @@
     "@pixi/filter-glitch": "^2.6.0",
     "@pixi/filter-pixelate": "^2.5.0",
     "fps": "0.0.3",
+    "npm": "^5.7.1",
     "pixi.js": "^4.7.1",
     "tracking": "^1.1.3"
   }

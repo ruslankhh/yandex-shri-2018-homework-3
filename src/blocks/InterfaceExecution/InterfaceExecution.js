@@ -1,9 +1,9 @@
-import * as PIXI from 'pixi.js';
+import { Text } from 'pixi.js';
 
 import InterfaceFPS from '../InterfaceFPS/InterfaceFPS';
 import InterfaceUserAgent from '../InterfaceUserAgent/InterfaceUserAgent';
 
-const InterfaceExecution = new PIXI.Text('', {
+const InterfaceExecution = new Text('', {
   fontFamily: 'Menlo, Monaco, monospace',
   fontSize: 10,
   fill: 0xffffff

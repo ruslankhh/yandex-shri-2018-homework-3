@@ -1,8 +1,8 @@
-import * as PIXI from 'pixi.js';
+import { Container, Sprite, Texture } from 'pixi.js';
 // import 'tracking';
 // import './../../../node_modules/tracking/build/data/face';
 
-const InterfaceFaceTracking = new PIXI.Container();
+const InterfaceFaceTracking = new Container();
 
 const canvas = document.createElement('canvas');
 // const ctx = canvas.getContext('2d');
@@ -33,8 +33,8 @@ canvas.height = 480;
 //   });
 // };
 
-const texture = PIXI.Texture.fromCanvas(canvas);
-const canvasSprite = new PIXI.Sprite(texture);
+const texture = Texture.fromCanvas(canvas);
+const canvasSprite = new Sprite(texture);
 
 InterfaceFaceTracking.addChild(
   canvasSprite

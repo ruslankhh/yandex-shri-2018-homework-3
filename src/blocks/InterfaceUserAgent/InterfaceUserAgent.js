@@ -1,7 +1,7 @@
-import * as PIXI from 'pixi.js';
+import { Text } from 'pixi.js';
 import parser from 'ua-parser-js';
 
-const InterfaceUserAgent = new PIXI.Text('', {
+const InterfaceUserAgent = new Text('', {
   fontFamily: 'Menlo, Monaco, monospace',
   fontSize: 10,
   fill: 0xffffff

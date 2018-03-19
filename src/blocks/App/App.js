@@ -1,11 +1,11 @@
-import * as PIXI from 'pixi.js';
+import { Application } from 'pixi.js';
 
 import PlayerContainer from '../PlayerContainer/PlayerContainer';
 import InterfaceContainer from '../InterfaceContainer/InterfaceContainer';
 
 import './App.css';
 
-const App = new PIXI.Application({
+const App = new Application({
   width: 640,
   height: 480
 });
