@@ -13,10 +13,8 @@ InterfaceAudioVisualizer.addChild(sprite);
 
 const animate = () => {
   sprite.texture.update();
-
-  window.requestAnimationFrame(animate);
 };
 
-animate();
+PIXI.ticker.shared.add(animate);
 
 export default InterfaceAudioVisualizer;

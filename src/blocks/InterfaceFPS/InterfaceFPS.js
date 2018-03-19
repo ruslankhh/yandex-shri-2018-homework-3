@@ -10,14 +10,16 @@ const InterfaceFPS = new PIXI.Text('', {
 
 InterfaceFPS.position.set(20);
 
+let fps = 0;
+
+setInterval(() => {
+  fps = tiker.FPS.toFixed(3).toString().toUpperCase();
+}, 100);
+
 const animate = () => {
-  const fps = tiker.FPS.toFixed(3).toString().toUpperCase();
-
   InterfaceFPS.text = `FPS: ${fps}`;
-
-  setTimeout(animate, 100);
 };
 
-animate();
+PIXI.ticker.shared.add(animate);
 
 export default InterfaceFPS;

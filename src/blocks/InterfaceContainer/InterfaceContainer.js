@@ -5,7 +5,7 @@ import InterfaceAudioVisualizer from
   '../InterfaceAudioVisualizer/InterfaceAudioVisualizer';
 import InterfaceUserAgent from '../InterfaceUserAgent/InterfaceUserAgent';
 import InterfaceExecution from '../InterfaceExecution/InterfaceExecution';
-import InterfaceFaceTracking from '../InterfaceFaceTracking/InterfaceFaceTracking';
+import InterfaceFaceTracker from '../InterfaceFaceTracker/InterfaceFaceTracker';
 
 const Interface = new PIXI.Container();
 
@@ -14,7 +14,7 @@ Interface.addChild(
   InterfaceAudioVisualizer,
   InterfaceUserAgent,
   InterfaceExecution,
-  InterfaceFaceTracking
+  InterfaceFaceTracker
 );
 
 export default Interface;

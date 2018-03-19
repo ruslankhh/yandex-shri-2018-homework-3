@@ -1,5 +1,7 @@
 // Source: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 
+import * as PIXI from 'pixi.js';
+
 import AudioAnalyser from '../AudioAnalyser/AudioAnalyser';
 
 const AudioVisualizer = document.createElement('canvas');
@@ -38,10 +40,8 @@ const animate = () => {
 
   ctx.lineTo(width, height / 2);
   ctx.stroke();
-
-  window.requestAnimationFrame(animate);
 };
 
-animate();
+PIXI.ticker.shared.add(animate);
 
 export default AudioVisualizer;

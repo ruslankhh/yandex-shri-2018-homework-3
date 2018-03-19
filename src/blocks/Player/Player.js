@@ -1,5 +1,6 @@
 import parser from 'ua-parser-js';
 
+import Camera from '../Camera/Camera';
 import './Player.css';
 
 const Player = document.createElement('video');
@@ -13,13 +14,15 @@ Player.autoplay = true;
 Player.defaultMuted = true;
 Player.preload = true;
 
-navigator.mediaDevices.getUserMedia({ audio: false, video: true })
+Camera.getUserMedia()
   .then(stream => {
     if ('srcObject' in Player) {
       Player.srcObject = stream;
     } else {
       Player.src = URL.createObjectURL(stream);
     }
+
+    return stream;
   });
 
 export default Player;

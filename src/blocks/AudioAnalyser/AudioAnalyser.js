@@ -1,5 +1,7 @@
 // Source: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 
+import Camera from '../Camera/Camera';
+
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const ctx = new AudioContext();
 const AudioAnalyser = ctx.createAnalyser();
@@ -22,9 +24,11 @@ const analyse = (stream) => {
   biquadFilter.connect(convolver);
   convolver.connect(gainNode);
   gainNode.connect(ctx.destination);
+
+  return stream;
 };
 
-navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+Camera.getUserMedia()
   .then(analyse);
 
 export default AudioAnalyser;
