@@ -1,8 +1,8 @@
-import { Text, ticker } from 'pixi.js';
+import * as PIXI from 'pixi.js';
 
-const sharedTicker = ticker.shared;
+const tiker = PIXI.ticker.shared;
 
-const InterfaceFPS = new Text('', {
+const InterfaceFPS = new PIXI.Text('', {
   fontFamily: 'Menlo, Monaco, monospace',
   fontSize: 10,
   fill: 0xffffff
@@ -11,7 +11,7 @@ const InterfaceFPS = new Text('', {
 InterfaceFPS.position.set(20);
 
 const animate = () => {
-  const fps = sharedTicker.FPS.toFixed(3).toString().toUpperCase();
+  const fps = tiker.FPS.toFixed(3).toString().toUpperCase();
 
   InterfaceFPS.text = `FPS: ${fps}`;
 
@@ -19,7 +19,5 @@ const animate = () => {
 };
 
 animate();
-
-InterfaceFPS.animate = animate;
 
 export default InterfaceFPS;

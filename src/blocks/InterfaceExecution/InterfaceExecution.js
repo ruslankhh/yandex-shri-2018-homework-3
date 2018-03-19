@@ -1,37 +1,42 @@
-import { Text } from 'pixi.js';
+import * as PIXI from 'pixi.js';
+import parser from 'ua-parser-js';
 
-import InterfaceFPS from '../InterfaceFPS/InterfaceFPS';
-import InterfaceUserAgent from '../InterfaceUserAgent/InterfaceUserAgent';
+import data from '../../data/data';
 
-const InterfaceExecution = new Text('', {
+const InterfaceExecution = new PIXI.Text('', {
   fontFamily: 'Menlo, Monaco, monospace',
   fontSize: 10,
   fill: 0xffffff
 });
 
+const ua = parser(window.navigator.userAgent);
+const texts = ua.browser.name.toLowerCase() !== 'firefox'
+  ? data.functions
+  : data.styles;
+
+console.log(ua.browser.name.toLowerCase());
+console.log(ua.browser.name.toLowerCase() !== 'firefox');
+console.log(texts);
+
 InterfaceExecution.position.set(400, 60);
 
-const { animate: animateFPS } = InterfaceFPS;
-const { animate: animateUserAgent } = InterfaceUserAgent;
-
 const animate = () => {
-  const InterfaceExecutions = [animateFPS, animateUserAgent, animate]
-    .map(func =>
-      func.toString().toUpperCase().split('\n')
-        .map(text => {
-          if (text.length > 0) {
-            const lineLength = 36;
-            let newText = '';
-            for (let i = 0; i < text.length / lineLength; i++) {
-              newText = `${newText}${text.slice(i * lineLength, (i + 1) * lineLength)}\n`;
-            }
-
-            return newText;
-          } else {
-            return text;
+  const InterfaceExecutions = texts.map(func =>
+    func.toString().toUpperCase().split('\n')
+      .map(text => {
+        if (text.length > 0) {
+          const lineLength = 36;
+          let newText = '';
+          for (let i = 0; i < text.length / lineLength; i++) {
+            newText = `${newText}${text.slice(i * lineLength, (i + 1) * lineLength)}\n`;
           }
-        })
-    );
+
+          return newText;
+        } else {
+          return text;
+        }
+      })
+  );
 
   const indexFunction = Math.round((InterfaceExecutions.length - 1) * Math.random());
   const InterfaceExecutionArray = InterfaceExecutions[indexFunction];
@@ -68,7 +73,5 @@ const animate = () => {
 };
 
 animate();
-
-InterfaceExecution.animate = animate;
 
 export default InterfaceExecution;

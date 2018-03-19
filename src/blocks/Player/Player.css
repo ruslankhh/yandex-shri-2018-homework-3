@@ -4,4 +4,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  &--browser-firefox {
+    display: block;
+    filter:
+      grayscale(1)
+      brightness(1)
+      sepia(1)
+      hue-rotate(-50deg)
+      saturate(4)
+      contrast(2);
+  }
 }

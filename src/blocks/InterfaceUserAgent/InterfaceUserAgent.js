@@ -1,7 +1,7 @@
-import { Text } from 'pixi.js';
+import * as PIXI from 'pixi.js';
 import parser from 'ua-parser-js';
 
-const InterfaceUserAgent = new Text('', {
+const InterfaceUserAgent = new PIXI.Text('', {
   fontFamily: 'Menlo, Monaco, monospace',
   fontSize: 10,
   fill: 0xffffff
@@ -21,7 +21,5 @@ const animate = () => {
 };
 
 animate();
-
-InterfaceUserAgent.animate = animate;
 
 export default InterfaceUserAgent;
