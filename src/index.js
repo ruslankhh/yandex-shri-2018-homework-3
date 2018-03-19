@@ -8,7 +8,7 @@ const root = document.getElementById('root');
 const ua = parser(window.navigator.userAgent);
 const isSupported = !['firefox', 'yandex'].includes(ua.browser.name.toLowerCase());
 
-if (isSupported) {
+if (!isSupported) {
   root.appendChild(Player);
 }
 root.appendChild(App.view);
