@@ -10,13 +10,11 @@ const InterfaceExecution = new PIXI.Text('', {
 });
 
 const ua = parser(window.navigator.userAgent);
-const texts = ua.browser.name.toLowerCase() !== 'firefox'
+const isSupported = !['firefox', 'yandex'].includes(ua.browser.name.toLowerCase());
+
+const texts = isSupported
   ? data.functions
   : data.styles;
-
-console.log(ua.browser.name.toLowerCase());
-console.log(ua.browser.name.toLowerCase() !== 'firefox');
-console.log(texts);
 
 InterfaceExecution.position.set(400, 60);
 

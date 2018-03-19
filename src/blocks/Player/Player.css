@@ -5,7 +5,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  &--browser-firefox {
+  &--browser-firefox,
+  &--browser-yandex {
     display: block;
     filter:
       grayscale(1)
