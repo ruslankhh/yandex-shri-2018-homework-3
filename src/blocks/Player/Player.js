@@ -4,19 +4,20 @@ import './Player.css';
 
 const Player = document.createElement('video');
 const ua = parser(window.navigator.userAgent);
+const browser = ua.browser.name.toLowerCase();
 
-Player.className = `Player Player--browser-${ua.browser.name.toLowerCase()}`;
+Player.className = `Player Player--browser-${browser}`;
 Player.width = 640;
 Player.height = 480;
 Player.autoplay = true;
 Player.defaultMuted = true;
 Player.preload = true;
 
-navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+navigator.mediaDevices.getUserMedia({ audio: false, video: true })
   .then(stream => {
-    try {
+    if ('srcObject' in Player) {
       Player.srcObject = stream;
-    } catch (error) {
+    } else {
       Player.src = URL.createObjectURL(stream);
     }
   });
