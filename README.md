@@ -41,8 +41,8 @@
 - Разбил приложение на компоненты.
 - Добавил анимированный интерфейс в виде показателя FPS, UserAgenta и случайного вывода функций из моего кода (из трёх).
 - Сделал помехи в виде случайных фильтров глитча и пикселизации.
-- Решил сделать отслеживание лица человека на видео [tracking.js](https://github.com/eduardolundgren/tracking.js). Разобрался, но с ней сильно упал FPS, нужно оптимизировать всё приложение. Слишком много отдельных canvas отрисовывается. Можно посомтреть в ветке [feature/face-tracker](https://github.com/ruslankhh/yandex-shri-2018-homework-3/tree/feature/face-tracker).
 - Так как WebGL в Firefox выдаёт [ошибку с Pixi.js](https://github.com/pixijs/pixi.js/issues/3897) и не отображает видео, а в Яндекс.Браузере видео отображает, но без фильтров, поэтому сделал для них фильтры через HTML и CSS. В Chrome и Safari всё работает.
 - Если в Chrome не работает, проверьте ссылку — она должна быть в HTTPS: https://ruslankhh.com/yandex-shri-2018-homework-3
 - И соответственно поменял вывод данных в интерфейсе (в Chrome — это JS код, а в FF и Яндекс.Браузере — CSS).
 - Добавил визуализатор звука по примеру [Analyser](https://mrsamo.github.io/shri-2018-multimedia-audio/#web-audio-api-modules-analyser) из  лекции ["Мультимедиа. Аудио. Синтез и разпознавание речи."](https://mrsamo.github.io/shri-2018-multimedia-audio) Александрa Завьяловa.
+- Решил сделать отслеживание лица человека на видео [tracking.js](https://github.com/eduardolundgren/tracking.js). Разобрался, но с ней сильно упал FPS, нужно оптимизировать всё приложение. Слишком много отдельных canvas отрисовывается. Можно посмотреть в ветке [feature/face-tracker](https://github.com/ruslankhh/yandex-shri-2018-homework-3/tree/feature/face-tracker).
